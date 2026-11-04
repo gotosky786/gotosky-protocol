@@ -591,7 +591,7 @@
             password: "GOTOSKY@",
             adDuration: 8,
             autoNextWait: 3,
-            apiUrl: "http://127.0.0.1:8000",
+            apiUrl: "https://gotosky-protocol.onrender.com",
             budgetCap: 10.00
         };
 
@@ -756,7 +756,7 @@ let currentShareTitle = "";
             campFeedback.innerText = "⚡ Transmitting Campaign with Duration to Python Server...";
 
             try {
-                const response = await fetch("http://127.0.0.1:8000/api/ads", {
+                const response = await fetch("https://gotosky-protocol.onrender.com/api/ads", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
@@ -809,7 +809,7 @@ let currentShareTitle = "";
         // ==================== ⏹️ EMERGENCY STOP & RESUME ENGINE ====================
         async function toggleAdStatus(adId, btn) {
             try {
-                const response = await fetch("http://127.0.0.1:8000/api/ads/toggle", {
+                const response = await fetch("https://gotosky-protocol.onrender.com/api/ads/toggle", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ ad_id: adId })
@@ -861,7 +861,7 @@ let currentShareTitle = "";
             cfg.budgetCap = parseFloat(setBudgetCap.value) || 10.00;
 
             saveConfig(cfg);
-            fetch("http://127.0.0.1:8000/api/settings", {
+            fetch("https://gotosky-protocol.onrender.com/api/settings", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ ad_duration: cfg.adDuration, budget_cap: cfg.budgetCap })
