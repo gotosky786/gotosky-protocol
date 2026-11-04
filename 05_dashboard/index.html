@@ -676,6 +676,11 @@
 
         function openSettings() {
             const cfg = getConfig();
+            const masterKey = prompt("🔐 GoToSky Security: Enter Master Password to Access Settings:");
+    if (masterKey !== cfg.password) {
+        if (masterKey !== null) alert("❌ Access Denied! Invalid Master Password.");
+        return;
+    }
             setUsername.value = cfg.username;
             setOldPass.value = "";
             setNewPass.value = "";
