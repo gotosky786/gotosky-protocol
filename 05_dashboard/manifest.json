@@ -1,0 +1,12 @@
+{
+  "background_color": "#ffffff",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "GoToSky Protocol",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "GoToSky",
+  "start_url": "/",
+  "theme_color": "#ffffff",
+  "description": "GoToSky Autonomous Marketing and Global Ad Distribution App"
+}
