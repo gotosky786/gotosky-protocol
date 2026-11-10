@@ -1,12 +1,25 @@
 {
-  "background_color": "#ffffff",
-  "dir": "ltr",
-  "display": "standalone",
   "name": "GoToSky Protocol",
-  "orientation": "any",
-  "scope": "/",
   "short_name": "GoToSky",
-  "start_url": "/",
-  "theme_color": "#ffffff",
-  "description": "GoToSky Autonomous Marketing and Global Ad Distribution App"
+  "description": "GoToSky Autonomous Marketing and Global Ad Distribution App",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#060913",
+  "theme_color": "#060913",
+  "icons": [
+    {
+      "src": "GOTOSKY.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "GOTOSKY.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
 }
