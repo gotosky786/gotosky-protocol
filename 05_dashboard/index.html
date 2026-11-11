@@ -9,7 +9,11 @@
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            background-color: #060913;
+            background: radial-gradient(circle at 15% 15%, #ffffff 0%, rgba(255, 255, 255, 0.8) 25%, transparent 55%),
+                radial-gradient(circle at 85% 30%, #ffffff 0%, rgba(255, 255, 255, 0.75) 30%, transparent 60%),
+                radial-gradient(circle at 50% 85%, #ffffff 0%, rgba(255, 255, 255, 0.8) 25%, transparent 55%),
+                linear-gradient(180deg, #99c6f8 0%, #cce2fd 30%, #e8f3fe 60%, #b8d7fb 100%);
+    background-attachment: fixed;
             color: #f1f5f9;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             min-height: 100vh;
@@ -668,7 +672,7 @@
             </div>
 
             <div class="top-actions">
-                <button onclick="openSettings()" style="background: linear-gradient(135deg, #0284c7, #38bdf8); border: none; color: #000; font-weight: 700; padding: 10px 16px; border-radius: 8px; cursor: pointer; font-size: 13px; box-shadow: 0 0 14px rgba(56, 189, 248, 0.3);">⚙️ Secure Settings & Launcher 🚀</button>
+              
                 <div class="live-indicator">
                     <span class="pulse-dot"></span>
                     <span>CLOUD ENGINE ONLINE 24/7</span>
