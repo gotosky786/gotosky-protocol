@@ -464,7 +464,67 @@
             <div id="login-error"></div>
         </div>
     </div>
+<!-- ==================== 1-CLICK GLOBAL SOCIAL MEDIA BLAST STATION ==================== -->
+    <div id="social-blast-modal" class="modal-overlay hidden">
+        <div class="modal-card" style="border: 1.5px solid rgba(245, 158, 11, 0.5); box-shadow: 0 0 35px rgba(245, 158, 11, 0.2);">
+            <div class="modal-header">
+                <div class="modal-title" style="color: #f59e0b; font-weight: 800; font-size: 17px;">
+                    <span>🚀</span> 1-Click Global Social Blast Station
+                </div>
+                <div class="close-btn" onclick="closeSocialBlastModal()" title="Close">✕</div>
+            </div>
 
+            <!-- Active Movie / Brand Preview Box -->
+            <div class="settings-section" style="border: 1px solid rgba(245, 158, 11, 0.3); background: rgba(245, 158, 11, 0.05);">
+                <div style="font-size: 11px; color: #f59e0b; font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">🎬 Active Campaign To Blast:</div>
+                <div id="blast-campaign-name" style="font-size: 16px; font-weight: 800; color: #fff; margin-bottom: 6px;">The Legend of Galaxy: 3D Movie</div>
+                <div style="font-size: 11px; color: #94a3b8;">Status: <span style="color: #10b981; font-weight: 700;">● Ready for Worldwide Social Broadcast</span></div>
+            </div>
+
+            <!-- Direct 3D Cinema Player Link (Bina Kisi Website Ke!) -->
+            <div class="settings-section">
+                <div class="section-heading" style="color: #38bdf8;">🔗 Direct 3D Full-Screen Player Link (No Website Needed)</div>
+                <div style="display: flex; gap: 8px;">
+                    <input type="text" id="blast-player-link" class="login-input" value="https://gotosky786.github.io/gotosky-protocol/01_ad_widget/" readonly style="background: rgba(0,0,0,0.5); color: #38bdf8; font-size: 12px;">
+                    <button onclick="copyDirectPlayerLink()" style="background: linear-gradient(135deg, #0284c7, #38bdf8); color: #000; border: none; padding: 0 16px; border-radius: 8px; font-weight: 800; font-size: 12px; cursor: pointer; white-space: nowrap;">📋 Copy Link</button>
+                </div>
+                <div id="copy-link-feedback" style="font-size: 11px; color: #10b981; margin-top: 5px; min-height: 15px; font-weight: 600;"></div>
+            </div>
+
+            <!-- 1-Tap Social Media Blast Buttons Grid -->
+            <div class="settings-section">
+                <div class="section-heading" style="color: #f59e0b;">⚡ Instant 1-Tap Multi-Channel Push</div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                    <!-- WhatsApp 1-Tap Blast -->
+                    <button onclick="blastToWhatsApp()" style="background: #25D366; color: #fff; border: none; padding: 12px 10px; border-radius: 8px; font-weight: 700; font-size: 13px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);">
+                        <span>📲</span> WhatsApp Blast
+                    </button>
+
+                    <!-- Telegram 1-Tap Blast -->
+                    <button onclick="blastToTelegram()" style="background: #0088cc; color: #fff; border: none; padding: 12px 10px; border-radius: 8px; font-weight: 700; font-size: 13px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; box-shadow: 0 4px 15px rgba(0, 136, 204, 0.3);">
+                        <span>✈️</span> Telegram Blast
+                    </button>
+
+                    <!-- Facebook Viral Share -->
+                    <button onclick="blastToFacebook()" style="background: #1877F2; color: #fff; border: none; padding: 12px 10px; border-radius: 8px; font-weight: 700; font-size: 13px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; box-shadow: 0 4px 15px rgba(24, 119, 242, 0.3);">
+                        <span>📘</span> Facebook Post
+                    </button>
+
+                    <!-- X / Twitter Blast -->
+                    <button onclick="blastToTwitter()" style="background: #0f172a; color: #fff; border: 1px solid rgba(255,255,255,0.2); padding: 12px 10px; border-radius: 8px; font-weight: 700; font-size: 13px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                        <span>⚡</span> Tweet on X
+                    </button>
+                </div>
+
+                <!-- TikTok & Reels AI Kit Button -->
+                <button onclick="copyTikTokReelsKit()" style="width: 100%; margin-top: 10px; background: linear-gradient(135deg, #ec4899, #8b5cf6); color: #fff; border: none; padding: 12px; border-radius: 8px; font-weight: 700; font-size: 13px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);">
+                    <span>🎵</span> Copy TikTok & Reels AI Script + Viral Tags
+                </button>
+                <div id="blast-action-feedback" style="font-size: 11px; color: #10b981; margin-top: 8px; text-align: center; min-height: 15px; font-weight: 600;"></div>
+            </div>
+        </div>
+    </div>
     <!-- ==================== MASTER SETTINGS & SECURE LAUNCHPAD ==================== -->
     <div id="settings-modal" class="modal-overlay hidden">
         <div class="modal-card">
@@ -729,7 +789,7 @@
                         <td><span id="badge-ad_movie_01" class="status-badge status-active">ACTIVE (8s)</span></td>
                         <td>
                             <button onclick="toggleAdStatus('ad_movie_01', this)" class="btn-stop-toggle btn-stop-red">⏹️ Stop Ad</button>
-                            <button onclick="openSocialModal('The Legend of Galaxy: 3D Movie', 'https://www.youtube.com')" style="background: rgba(56, 189, 248, 0.2); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); padding: 6px 12px; border-radius: 6px; font-size: 11px; font-weight: 700; cursor: pointer; margin-left: 6px;">📢 Share Kit</button>
+                            <button onclick="openSocialBlastModal('The Legend of Galaxy: 3D Movie')" style="background: linear-gradient(135deg, #0284c7, #38bdf8); color: #000; border: none; padding: 6px 12px; border-radius: 6px; font-size: 11px; font-weight: 800; cursor: pointer; margin-left: 6px; box-shadow: 0 2px 8px rgba(56, 189, 248, 0.4);">🚀 Social Blast</button>
                         </td>
                     </tr>
                     <tr id="row-ad_cartoon_02">
@@ -739,7 +799,7 @@
                         <td><span id="badge-ad_cartoon_02" class="status-badge status-active">ACTIVE (8s)</span></td>
                         <td>
                             <button onclick="toggleAdStatus('ad_cartoon_02', this)" class="btn-stop-toggle btn-stop-red">⏹️ Stop Ad</button>
-                            <button onclick="openSocialModal('Super Heroes: 3D Cartoon', 'https://www.disney.com')" style="background: rgba(56, 189, 248, 0.2); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); padding: 6px 12px; border-radius: 6px; font-size: 11px; font-weight: 700; cursor: pointer; margin-left: 6px;">📢 Share Kit</button>
+                            <button onclick="openSocialBlastModal('Super Heroes: 3D Cartoon')" style="background: linear-gradient(135deg, #0284c7, #38bdf8); color: #000; border: none; padding: 6px 12px; border-radius: 6px; font-size: 11px; font-weight: 800; cursor: pointer; margin-left: 6px; box-shadow: 0 2px 8px rgba(56, 189, 248, 0.4);">🚀 Social Blast</button>
                         </td>
                     </tr>
                 </tbody>
@@ -838,6 +898,82 @@ function toggleMobileDrawer() {
         const isOpen = drawer.classList.toggle('drawer-open');
         if (backdrop) backdrop.style.display = isOpen ? 'block' : 'none';
     }
+}
+// ==================== 1-CLICK GLOBAL SOCIAL MEDIA BLAST ENGINE ====================
+let currentBlastCampaign = "The Legend of Galaxy: 3D Movie";
+
+function openSocialBlastModal(campaignName) {
+    currentBlastCampaign = campaignName || "The Legend of Galaxy: 3D Movie";
+    const nameEl = document.getElementById('blast-campaign-name');
+    const linkEl = document.getElementById('blast-player-link');
+    const modalEl = document.getElementById('social-blast-modal');
+    const feedbackEl = document.getElementById('blast-action-feedback');
+    const copyFeedbackEl = document.getElementById('copy-link-feedback');
+
+    if (nameEl) nameEl.innerText = currentBlastCampaign;
+    if (feedbackEl) feedbackEl.innerText = "";
+    if (copyFeedbackEl) copyFeedbackEl.innerText = "";
+
+    // Direct 3D Cinema Player Link (No Website Needed!)
+    const directUrl = "https://gotosky786.github.io/gotosky-protocol/01_ad_widget/?ad=" + encodeURIComponent(currentBlastCampaign);
+    if (linkEl) linkEl.value = directUrl;
+
+    if (modalEl) modalEl.classList.remove('hidden');
+}
+
+function closeSocialBlastModal() {
+    const modalEl = document.getElementById('social-blast-modal');
+    if (modalEl) modalEl.classList.add('hidden');
+}
+
+function copyDirectPlayerLink() {
+    const linkEl = document.getElementById('blast-player-link');
+    const copyFeedbackEl = document.getElementById('copy-link-feedback');
+    if (linkEl) {
+        navigator.clipboard.writeText(linkEl.value).then(() => {
+            if (copyFeedbackEl) copyFeedbackEl.innerText = "✓ Direct 3D Cinema Player Link Copied to Clipboard!";
+        }).catch(() => {
+            linkEl.select();
+            document.execCommand('copy');
+            if (copyFeedbackEl) copyFeedbackEl.innerText = "✓ Direct 3D Cinema Player Link Copied!";
+        });
+    }
+}
+
+function blastToWhatsApp() {
+    const directUrl = document.getElementById('blast-player-link').value;
+    const msg = "🎬 *WATCH EXCLUSIVE 3D PREMIERE: " + currentBlastCampaign + "*\n\nExperience breathtaking 4K 3D hyper-visuals & Dolby Atmos sound on GoToSky Player:\n👉 " + directUrl + "\n\nTap above to watch now!";
+    const url = "https://api.whatsapp.com/send?text=" + encodeURIComponent(msg);
+    window.open(url, '_blank');
+}
+
+function blastToTelegram() {
+    const directUrl = document.getElementById('blast-player-link').value;
+    const msg = "🎬 WATCH 3D PREMIERE: " + currentBlastCampaign + " — Experience official trailer on GoToSky Player!";
+    const url = "https://t.me/share/url?url=" + encodeURIComponent(directUrl) + "&text=" + encodeURIComponent(msg);
+    window.open(url, '_blank');
+}
+
+function blastToFacebook() {
+    const directUrl = document.getElementById('blast-player-link').value;
+    const url = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(directUrl);
+    window.open(url, '_blank');
+}
+
+function blastToTwitter() {
+    const directUrl = document.getElementById('blast-player-link').value;
+    const tweet = "🎬 Official Worldwide 3D Premiere: " + currentBlastCampaign + "!\nWatch the stunning trailer on GoToSky Player now:";
+    const url = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(tweet) + "&url=" + encodeURIComponent(directUrl) + "&hashtags=GoToSky,3DCinema,MovieTrailer,Viral";
+    window.open(url, '_blank');
+}
+
+function copyTikTokReelsKit() {
+    const directUrl = document.getElementById('blast-player-link').value;
+    const kitText = '🔥 "Wait until you see this! 😱 Official 3D Cinema release: ' + currentBlastCampaign + '! Full 3D player link in bio & comments below!"\n\nDirect Link: ' + directUrl + '\n\n#Movie2026 #Cinema3D #Viral #Trending #GoToSky #Blockbuster';
+    navigator.clipboard.writeText(kitText).then(() => {
+        const feedbackEl = document.getElementById('blast-action-feedback');
+        if (feedbackEl) feedbackEl.innerText = "✓ TikTok & Reels AI Script + Viral Tags Copied to Clipboard!";
+    });
 }
         const settingsModal = document.getElementById('settings-modal');
         const campNameInput = document.getElementById('camp-name');
