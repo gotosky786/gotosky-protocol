@@ -572,16 +572,81 @@
         </div>
 
     </div>
+<!-- Official Apps & Games Showcase -->
+        <div class="section-bar" id="apps-title" style="margin-top: 15px;">
+            <div class="section-name">📱 Official Apps & Games Showcase</div>
+        </div>
+        <div class="cinema-grid" id="apps-container">
+            <!-- App 1: 3D Action & Gaming -->
+            <div class="cinema-card">
+                <div class="poster-frame" style="background: radial-gradient(circle, #1e1b4b, #0f172a); display: flex; align-items: center; justify-content: center; position: relative;">
+                    <div style="font-size: 50px;">🎮</div>
+                    <span class="pill pill-gold" style="position: absolute; top: 12px; right: 12px; font-size: 9px;">IN DEVELOPMENT</span>
+                </div>
+                <div class="card-details">
+                    <div>
+                        <div class="category-tag" style="color: #ec4899;">3D Action & Gaming</div>
+                        <h4 class="title-text">Sky Battle 3D Game</h4>
+                        <p class="synopsis-text">High-speed supersonic aerial combat game designed for mobile and PC screens.</p>
+                    </div>
+                    <button class="btn-stream" style="background: linear-gradient(135deg, #ec4899, #8b5cf6); color: #fff;">🚀 Coming Soon</button>
+                </div>
+            </div>
 
-    <!-- Video Modal Player -->
+            <!-- App 2: Mobile Cinema App -->
+            <div class="cinema-card">
+                <div class="poster-frame" style="background: radial-gradient(circle, #064e3b, #0f172a); display: flex; align-items: center; justify-content: center; position: relative;">
+                    <div style="font-size: 50px;">📱</div>
+                    <span class="pill pill-blue" style="position: absolute; top: 12px; right: 12px; font-size: 9px;">PRE-REGISTER</span>
+                </div>
+                <div class="card-details">
+                    <div>
+                        <div class="category-tag" style="color: #10b981;">Cinema & Streaming</div>
+                        <h4 class="title-text">GoToSky Cinema Mobile</h4>
+                        <p class="synopsis-text">Stream all 3D movies and cartoons directly in 4K Ultra-HD with zero buffering.</p>
+                    </div>
+                    <button class="btn-stream btn-stream-green">📲 Pre-Register App</button>
+                </div>
+            </div>
+
+            <!-- App 3: Creator Technology Suite -->
+            <div class="cinema-card">
+                <div class="poster-frame" style="background: radial-gradient(circle, #78350f, #0f172a); display: flex; align-items: center; justify-content: center; position: relative;">
+                    <div style="font-size: 50px;">⚡</div>
+                    <span class="pill pill-gold" style="position: absolute; top: 12px; right: 12px; font-size: 9px;">STUDIO TOOLS</span>
+                </div>
+                <div class="card-details">
+                    <div>
+                        <div class="category-tag" style="color: #f59e0b;">Creator Technology</div>
+                        <h4 class="title-text">Sky Studio Suite</h4>
+                        <p class="synopsis-text">Smart video automation, AI clip generator, and multi-channel social viral dispatcher.</p>
+                    </div>
+                    <button class="btn-stream" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: #000; font-weight: 800;">⚡ Coming Soon</button>
+                </div>
+            </div>
+        </div>
+    <!-- Fast Makhan Video Player Engine -->
     <div id="cinema-modal" class="hidden">
         <div class="modal-screen">
             <div class="modal-bar">
-                <span id="player-label" style="font-weight: 800; color: #f59e0b; font-size: 14px;">Playing 3D Video...</span>
+                <span id="player-label" style="font-weight: 800; color: #f59e0b; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 80%;">🎬 Playing 3D Cinema Video...</span>
                 <button onclick="closeCinema()" style="background:none; border:none; color:#ef4444; font-size:22px; cursor:pointer; font-weight:800;">✕</button>
             </div>
+
+            <!-- Fast Quality & Mobile Speed Control Bar -->
+            <div style="background: rgba(0, 0, 0, 0.7); padding: 8px 14px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255, 255, 255, 0.08); flex-wrap: wrap; gap: 6px;">
+                <div style="font-size: 11px; font-weight: 700; color: #38bdf8; display: flex; align-items: center; gap: 5px;">
+                    <span>⚡</span> Stream Quality:
+                </div>
+                <div style="display: flex; gap: 6px;">
+                    <span style="background: rgba(16, 185, 129, 0.2); border: 1px solid #10b981; color: #10b981; font-size: 10px; font-weight: 800; padding: 2px 7px; border-radius: 4px;">FAST BUFFER (LOW DATA)</span>
+                    <span style="background: rgba(245, 158, 11, 0.2); border: 1px solid #f59e0b; color: #f59e0b; font-size: 10px; font-weight: 800; padding: 2px 7px; border-radius: 4px;">4K 3D DOLBY</span>
+                </div>
+            </div>
+
+            <!-- Fast Hardware-Accelerated Video Box -->
             <div class="modal-video-box">
-                <video id="player-media" controls autoplay playsinline></video>
+                <video id="player-media" controls autoplay playsinline webkit-playsinline preload="auto"></video>
             </div>
         </div>
     </div>
